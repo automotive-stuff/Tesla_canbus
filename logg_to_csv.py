@@ -77,7 +77,7 @@ while frame_counter <= MAX_NUMBER_OF_FRAMES:
             RmtrRPM = (message.data[4] + (message.data[5]<<8))-(512 * (message.data[5]&0x80))
         #ID115 Front motor RPM
         if message.arbitration_id == 277:
-            FmtrRPM = (message.data[4] + (message.data[5] << 8)) - (512 * (message.data[5] & 0x80))
+            FmtrRPM = (message.data[4] + (message.data[5] << 8)) - (512 * (message.data[5]&0x80))
 
     if WRITE_TO_FILE == True:
         if frame_counter == 1:
