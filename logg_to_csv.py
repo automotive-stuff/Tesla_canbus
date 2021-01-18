@@ -83,7 +83,7 @@ while frame_counter <= MAX_NUMBER_OF_FRAMES:
         if frame_counter == 1:
             write_data = ("time, msg_id, soc, temp, pedal_pos, pack_volt, pack_current, torque, mechPower, speedKMH, RmotorRPM, FmotorRPM\n")
         else:
-            write_data = ("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (time.time(), hex(message.arbitration_id)[2:], soc_ui, pack_temp, pedalPos, pack_volt, pack_current, RtorqMeas, mechPower, speedKMH, RmtrRPM, FmtrRPM))
+            write_data = ("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (time.time(), hex(message.arbitration_id)[2:], soc_ui, pack_temp, pedalPos, pack_volt, pack_current, RtorqMeas, mechPower, speedKMH, RmtrRPM, FmtrRPM))
         file_.write(write_data)
         
 if WRITE_TO_FILE == True:
