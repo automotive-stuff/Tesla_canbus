@@ -63,27 +63,27 @@ while frame_counter <= MAX_NUMBER_OF_FRAMES:
             statorCurr = message.data[4] + ((message.data[5] & 0x7)<<8)
         #ID 154 Rear Drive unit Torque in Nm and pedalpos in %
         if message.arbitration_id == 340:
-            RtorqMeas = (message.data[5] + ((message.data[6] & 0x1F)<<8)-(512 * (message.data[6] & 0x10))) * 0.25
+            rtorqMeas = (message.data[5] + ((message.data[6] & 0x1F)<<8)-(512 * (message.data[6] & 0x10))) * 0.25
             pedalPos = (message.data[2] * 0.4)
         #ID 145 Front Drive unit Torque in Nm
         if message.arbitration_id == 325:
-            FtorqMeas = (message.data[5] + ((message.data[6] & 0x1F) << 8) - (512 * (message.data[6] & 0x10))) * 0.25
+            ftorqMeas = (message.data[5] + ((message.data[6] & 0x1F) << 8) - (512 * (message.data[6] & 0x10))) * 0.25
         #ID116 Speed
         if message.arbitration_id == 278:
             speedKMH = ((message.data[2] + ((message.data[3] & 0xF)<<8))-500) / 20
             torqEst = ((message.data[0] + ((message.data[1] & 0xF)<<8))-(512 * (message.data[1] & 0x8))) / 2
         #ID106 Rear motor RPM
         if message.arbitration_id == 262:
-            RmtrRPM = (message.data[4] + (message.data[5]<<8))-(512 * (message.data[5]&0x80))
+            rmtrRPM = (message.data[4] + (message.data[5]<<8))-(512 * (message.data[5]&0x80))
         #ID115 Front motor RPM
         if message.arbitration_id == 277:
-            FmtrRPM = (message.data[4] + (message.data[5] << 8)) - (512 * (message.data[5]&0x80))
+            fmtrRPM = (message.data[4] + (message.data[5] << 8)) - (512 * (message.data[5]&0x80))
 
     if WRITE_TO_FILE == True:
         if frame_counter == 1:
             write_data = ("time, msg_id, soc, temp, pedal_pos, pack_volt, pack_current, torque, mechPower, speedKMH, RmotorRPM, FmotorRPM\n")
         else:
-            write_data = ("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (time.time(), hex(message.arbitration_id)[2:], soc_ui, pack_temp, pedalPos, pack_volt, pack_current, RtorqMeas, mechPower, speedKMH, RmtrRPM, FmtrRPM))
+            write_data = ("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n" % (time.time(), hex(message.arbitration_id)[2:], soc_ui, pack_temp, pedalPos, pack_volt, pack_current, rtorqMeas, ftorqMeas, mechPower, speedKMH, rmtrRPM, fmtrRPM))
         file_.write(write_data)
         
 if WRITE_TO_FILE == True:
