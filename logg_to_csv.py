@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # First script, logging to a file.
+# does not work as intended... Keeping for future fix.
 
 #Main import.
 import sys
