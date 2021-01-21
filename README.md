@@ -5,7 +5,8 @@ This is a work in progress and will be updated several times until completion.
 
 I'm using a Raspberry pi 4 and a PICAN2 card and connecting it to Can3
 
-
+Principles of operation.
+![Rpi with Pican2](https://github.com/ekenit/Tesla_canbus/blob/main/images/tesla_canbus%20(2).png)
 ![Rpi with Pican2](https://github.com/ekenit/Tesla_canbus/blob/main/images/rpi.jpg)
 
 Here is the Pinouts for Tesla Model S & X, the one we are interested in is Can3
