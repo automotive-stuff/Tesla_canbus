@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# First script, logging to a file.
+# Third script, Parsing information and sending to Mqtt Broker
 
 #Main import.
 import paho.mqtt.client as paho #mqtt library
@@ -11,7 +11,7 @@ import os
 import can
 
 #MQTT settings
-broker="198.18.100.185"
+broker="127.0.0.1"
 port=1883
 ACCESS_TOKEN=''
 #Defining publisher settings
