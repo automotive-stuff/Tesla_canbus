@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>TeslaPi</title>
+    <title>Canlogger</title>
     <link rel="stylesheet" href="css/mat.css">
     <script src="js/paho-mqtt-min.js" type="text/javascript"></script>
     <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
@@ -35,14 +35,12 @@
 		    $('#fps').html('FPS: <br>' + fps);
                 t_prev = t_now;
                 mc = 0;
-		//clearTimeout(wdt);
-		//wdt = setTimeout(function(){console.log("WDT barked"); MQTTconnect();}, 3000);
+		
             }
         }
 
         function onConnect() {
-            // Once a connection has been made, make a subscription and send a message.
-
+           
             console.log("Connected ");
             mqtt.subscribe("#");
         }
@@ -60,7 +58,7 @@
             };
             mqtt.onMessageArrived = onMessageArrived
 
-            mqtt.connect(options); //connect
+            mqtt.connect(options); 
         }
     </script>
 </head>
