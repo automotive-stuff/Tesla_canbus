@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# First script, logging to a file.
+# First primary script, running as service on raspberry pi serving Mosquitto Mqtt Broker installed locally.
 
 #Main import.
 import paho.mqtt.client as paho #mqtt library
