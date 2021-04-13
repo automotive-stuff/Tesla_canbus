@@ -46,7 +46,7 @@ var MQTTsteeringvalues1 = [0];
         }
             chart1.draw(data1, options1);
 
-        }, 0);
+        }, 1);
 //Define the charts for DC-DC,
         var data2 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
@@ -79,7 +79,7 @@ var MQTTsteeringvalues1 = [0];
         }
             chart2.draw(data2, options2);
 
-        }, 0);
+        }, 1);
         // Define charts for powerdelivery
         var data3 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
@@ -140,7 +140,7 @@ var MQTTsteeringvalues1 = [0];
         }
             chart4.draw(data4, options4);
         
-        }, 0);
+        }, 1);
         //STEERINGWHEEL
         var data5 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
@@ -171,7 +171,7 @@ var MQTTsteeringvalues1 = [0];
         }
             chart5.draw(data5, options5);
         
-        }, 0);
+        }, 1);
         
     }
 
