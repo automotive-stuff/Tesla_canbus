@@ -219,10 +219,10 @@ var MQTTvalues7 = [0,0,0,0,0,0,0,0];
         
         var options7 = {
             width: 280, height: 280,
-            greenFrom: 0, greenTo: 100,
-            yellowFrom: 100, yellowTo: 200,
-            redFrom: 200, redTo: 400,
-            minorTicks: 5, max: 400,
+            greenFrom: 10, greenTo: 60,
+            yellowFrom: -20, yellowTo: 10,
+            redFrom: 60, redTo: 100,
+            minorTicks: 5, max: 100, min: -20,
             animation:{
             duration: 0,
             easing: 'linear',
