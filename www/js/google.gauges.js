@@ -1,20 +1,20 @@
 // MQTT variables, one for names one for values.
-var MQTTmotorrpm = ["fmotorrpm","rmtorrpm"];
-var MQTTmotorrpmvalues = [0,0];
-var MQTTpercentage = ["frefficiency","rrefficiency","rrfrtorquebias","wattpedal"];
-var MQTTpercentagevalues = [0,0,0,0];
-var MQTTpower1 = ["propulsion","hpcombined"];
-var MQTTpowervalues1 = [0,0];
-var MQTTspeed1 = ["speed"];
-var MQTTspeedvalues1 = [0];
-var MQTTsteering1 = ["steeringangle"];
-var MQTTsteeringvalues1 = [0];
-var MQTTBattery1 = ["batteryvoltage","batterycurrent","batterypower","consumption"];
-var MQTTBatteryvalues1 = [0,0,0,0];
-var MQTTCurrent1 = ["dcdccurrent","rrstatorcurrent","frstatorcurrent","dcdcefficiency"];
-var MQTTCurrentvalues1 = [0,0,0,0];
-var MQTTTemp1 = ["dcdccoolantinlet","rrcoolantinlettemp","rrinverterpcbtemp","rrstatortemp","rrdccapacitortemp","rrheatsinktemp","rrinvertertemp","coolant"];
-var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
+var MQTTname1 = ["fmotorrpm","rmtorrpm"];
+var MQTTvalues1 = [0,0];
+var MQTTname2 = ["frefficiency","rrefficiency","rrfrtorquebias","wattpedal"];
+var MQTTvalues2 = [0,0,0,0];
+var MQTTname3 = ["propulsion","hpcombined"];
+var MQTTvalues3 = [0,0];
+var MQTTname4 = ["speed"];
+var MQTTvalues4 = [0];
+var MQTTname5 = ["steeringangle"];
+var MQTTvalues5 = [0];
+var MQTTname6 = ["batteryvoltage","batterycurrent","batterypower","consumption"];
+var MQTTvalues6 = [0,0,0,0];
+var MQTTname7 = ["dcdccurrent","rrstatorcurrent","frstatorcurrent","dcdcefficiency"];
+var MQTTvalues7 = [0,0,0,0];
+var MQTTname7 = ["dcdccoolantinlet","rrcoolantinlettemp","rrinverterpcbtemp","rrstatortemp","rrdccapacitortemp","rrheatsinktemp","rrinvertertemp","coolant"];
+var MQTTvalues7 = [0,0,0,0,0,0,0,0];
 
 // GUAGES, Further down is LineCharts!
 //Define the Gauge for MOTOR RPM.
@@ -25,8 +25,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
 
         var data1 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTmotorrpm[0], MQTTmotorrpmvalues[0]],
-        [MQTTmotorrpm[1], MQTTmotorrpmvalues[1]],      
+        [MQTTname1[0], MQTTvalues1[0]],
+        [MQTTname1[1], MQTTvalues1[1]],      
         ]);
 
         var options1 = {
@@ -46,8 +46,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart1.draw(data1, options1);
 
         setInterval(function() {
-        for (var i=0; i < MQTTmotorrpm.length; i++) {
-        data1.setValue(i, 1, MQTTmotorrpmvalues[i]);
+        for (var i=0; i < MQTTname1.length; i++) {
+        data1.setValue(i, 1, MQTTvalues1[i]);
         }
             chart1.draw(data1, options1);
 
@@ -55,10 +55,10 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
 //Define the charts for DC-DC,
         var data2 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTpercentage[0], MQTTpercentagevalues[0]],
-        [MQTTpercentage[1], MQTTpercentagevalues[1]],
-        [MQTTpercentage[2], MQTTpercentagevalues[2]],
-        [MQTTpercentage[3], MQTTpercentagevalues[3]],      
+        [MQTTname2[0], MQTTvalues2[0]],
+        [MQTTname2[1], MQTTvalues2[1]],
+        [MQTTname2[2], MQTTvalues2[2]],
+        [MQTTname2[3], MQTTvalues2[3]],      
         ]);
 
         var options2 = {
@@ -79,8 +79,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart2.draw(data2, options2);
 
         setInterval(function() {
-        for (var i=0; i < MQTTpercentage.length; i++) {
-        data2.setValue(i, 1, MQTTpercentagevalues[i]);
+        for (var i=0; i < MQTTname2.length; i++) {
+        data2.setValue(i, 1, MQTTvalues2[i]);
         }
             chart2.draw(data2, options2);
 
@@ -88,8 +88,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         // Define charts for powerdelivery
         var data3 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTpower1[0], MQTTpowervalues1[0]],
-        [MQTTpower1[1], MQTTpowervalues1[1]],      
+        [MQTTname3[0], MQTTvalues3[0]],
+        [MQTTname3[1], MQTTvalues3[1]],      
         ]);
         
         var options3 = {
@@ -110,8 +110,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart3.draw(data3, options3);
         
         setInterval(function() {
-        for (var i=0; i < MQTTpower1.length; i++) {
-        data3.setValue(i, 1, MQTTpowervalues1[i]);
+        for (var i=0; i < MQTTname3.length; i++) {
+        data3.setValue(i, 1, MQTTvalues3[i]);
         }
             chart3.draw(data3, options3);
         
@@ -119,7 +119,7 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         // SPEED GAUGE! ONLY ONE
         var data4 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTspeed1[0], MQTTspeedvalues1[0]],     
+        [MQTTname4[0], MQTTvalues4[0]],     
         ]);
         
         var options4 = {
@@ -140,8 +140,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart4.draw(data4, options4);
         
         setInterval(function() {
-        for (var i=0; i < MQTTspeed1.length; i++) {
-        data4.setValue(i, 1, MQTTspeedvalues1[i]);
+        for (var i=0; i < MQTTname4.length; i++) {
+        data4.setValue(i, 1, MQTTvalues4[i]);
         }
             chart4.draw(data4, options4);
         
@@ -149,7 +149,7 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         //STEERINGWHEEL
         var data5 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTsteering1[0], MQTTsteeringvalues1[0]],     
+        [MQTTname5[0], MQTTvalues5[0]],     
         ]);
         
         var options5 = {
@@ -171,18 +171,18 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart5.draw(data5, options5);
         
         setInterval(function() {
-        for (var i=0; i < MQTTsteering1.length; i++) {
-        data5.setValue(i, 1, MQTTsteeringvalues1[i]);
+        for (var i=0; i < MQTTname5.length; i++) {
+        data5.setValue(i, 1, MQTTvalues5[i]);
         }
             chart5.draw(data5, options5);
         
         }, 0);
         var data6 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTBattery1[0], MQTTBatteryvalues1[0]],
-        [MQTTBattery1[1], MQTTBatteryvalues1[1]],
-        [MQTTBattery1[2], MQTTBatteryvalues1[2]],
-        [MQTTBattery1[3], MQTTBatteryvalues1[3]],     
+        [MQTTname6[0], MQTTvalues6[0]],
+        [MQTTname6[1], MQTTvalues6[1]],
+        [MQTTname6[2], MQTTvalues6[2]],
+        [MQTTname6[3], MQTTvalues6[3]],     
         ]);
         
         var options6 = {
@@ -203,18 +203,18 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart6.draw(data6, options6);
         
         setInterval(function() {
-        for (var i=0; i < MQTTBattery1.length; i++) {
-        data6.setValue(i, 1, MQTTBatteryvalues1[i]);
+        for (var i=0; i < MQTTname6.length; i++) {
+        data6.setValue(i, 1, MQTTvalues6[i]);
         }
             chart6.draw(data6, options6);
         
         }, 0);
         var data7 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTCurrent1[0], MQTTCurrentvalues1[0]],
-        [MQTTCurrent1[1], MQTTCurrentvalues1[1]],
-        [MQTTCurrent1[2], MQTTCurrentvalues1[2]],
-        [MQTTCurrent1[3], MQTTCurrentvalues1[3]],     
+        [MQTTname7[0], MQTTvalues7[0]],
+        [MQTTname7[1], MQTTvalues7[1]],
+        [MQTTname7[2], MQTTvalues7[2]],
+        [MQTTname7[3], MQTTvalues7[3]],     
         ]);
         
         var options7 = {
@@ -235,22 +235,22 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart7.draw(data7, options7);
         
         setInterval(function() {
-        for (var i=0; i < MQTTCurrent1.length; i++) {
-        data7.setValue(i, 1, MQTTCurrentvalues1[i]);
+        for (var i=0; i < MQTTname7.length; i++) {
+        data7.setValue(i, 1, MQTTvalues7[i]);
         }
             chart7.draw(data7, options7);
         
         }, 0);
         var data8 = google.visualization.arrayToDataTable([
             ['Label', 'Value'], 
-        [MQTTTemp1[0], MQTTTempvalues1[0]],
-        [MQTTTemp1[1], MQTTTempvalues1[1]],
-        [MQTTTemp1[2], MQTTTempvalues1[2]],
-        [MQTTTemp1[3], MQTTTempvalues1[3]],
-        [MQTTTemp1[4], MQTTTempvalues1[4]],
-        [MQTTTemp1[5], MQTTTempvalues1[5]],
-        [MQTTTemp1[6], MQTTTempvalues1[6]],
-        [MQTTTemp1[7], MQTTTempvalues1[7]],      
+        [MQTTname7[0], MQTTvalues7[0]],
+        [MQTTname7[1], MQTTvalues7[1]],
+        [MQTTname7[2], MQTTvalues7[2]],
+        [MQTTname7[3], MQTTvalues7[3]],
+        [MQTTname7[4], MQTTvalues7[4]],
+        [MQTTname7[5], MQTTvalues7[5]],
+        [MQTTname7[6], MQTTvalues7[6]],
+        [MQTTname7[7], MQTTvalues7[7]],      
         ]);
         
         var options8 = {
@@ -271,8 +271,8 @@ var MQTTTempvalues1 = [0,0,0,0,0,0,0,0];
         chart8.draw(data8, options8);
         
         setInterval(function() {
-        for (var i=0; i < MQTTTemp1.length; i++) {
-        data8.setValue(i, 1, MQTTTempvalues1[i]);
+        for (var i=0; i < MQTTname7.length; i++) {
+        data8.setValue(i, 1, MQTTvalues7[i]);
         }
             chart8.draw(data8, options8);
         
@@ -291,72 +291,72 @@ client.connect({onSuccess:onConnect});
 // called when the client connects
 function onMessageArrived(message) {
     
-    for (var i=0; i < MQTTmotorrpm.length; i++) {
-    if (message.destinationName == MQTTmotorrpm[i]) {
-    MQTTmotorrpmvalues[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname1.length; i++) {
+    if (message.destinationName == MQTTname1[i]) {
+    MQTTvalues1[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTpercentage.length; i++) {
-    if (message.destinationName == MQTTpercentage[i]) {
-    MQTTpercentagevalues[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname2.length; i++) {
+    if (message.destinationName == MQTTname2[i]) {
+    MQTTvalues2[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTpower1.length; i++) {
-    if (message.destinationName == MQTTpower1[i]) {
-    MQTTpowervalues1[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname3.length; i++) {
+    if (message.destinationName == MQTTname3[i]) {
+    MQTTvalues3[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTspeed1.length; i++) {
-    if (message.destinationName == MQTTspeed1[i]) {
-    MQTTspeedvalues1[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname4.length; i++) {
+    if (message.destinationName == MQTTname4[i]) {
+    MQTTvalues4[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTsteering1.length; i++) {
-    if (message.destinationName == MQTTsteering1[i]) {
-    MQTTsteeringvalues1[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname5.length; i++) {
+    if (message.destinationName == MQTTname5[i]) {
+    MQTTvalues5[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTBattery1.length; i++) {
-    if (message.destinationName == MQTTBattery1[i]) {
-    MQTTBatteryvalues1[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname6.length; i++) {
+    if (message.destinationName == MQTTname6[i]) {
+    MQTTvalues6[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTCurrent1.length; i++) {
-    if (message.destinationName == MQTTCurrent1[i]) {
-    MQTTCurrentvalues1[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname7.length; i++) {
+    if (message.destinationName == MQTTname7[i]) {
+    MQTTvalues7[i] = Number(message.payloadString);
     }
     }
-    for (var i=0; i < MQTTTemp1.length; i++) {
-    if (message.destinationName == MQTTTemp1[i]) {
-    MQTTTempvalues1[i] = Number(message.payloadString);
+    for (var i=0; i < MQTTname7.length; i++) {
+    if (message.destinationName == MQTTname7[i]) {
+    MQTTvalues7[i] = Number(message.payloadString);
     }
     }
 }
 function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
-    for (var i=0; i < MQTTmotorrpm.length; i++) {
-    client.subscribe(MQTTmotorrpm[i]);
+    for (var i=0; i < MQTTname1.length; i++) {
+    client.subscribe(MQTTname1[i]);
     }
-    for (var i=0; i < MQTTpercentage.length; i++) {
-    client.subscribe(MQTTpercentage[i]);
+    for (var i=0; i < MQTTname2.length; i++) {
+    client.subscribe(MQTTname2[i]);
     }
-    for (var i=0; i < MQTTpower1.length; i++) {
-    client.subscribe(MQTTpower1[i]);
+    for (var i=0; i < MQTTname3.length; i++) {
+    client.subscribe(MQTTname3[i]);
     }
-    for (var i=0; i < MQTTspeed1.length; i++) {
-    client.subscribe(MQTTspeed1[i]);
+    for (var i=0; i < MQTTname4.length; i++) {
+    client.subscribe(MQTTname4[i]);
     }
-    for (var i=0; i < MQTTsteering1.length; i++) {
-    client.subscribe(MQTTsteering1[i]);
+    for (var i=0; i < MQTTname5.length; i++) {
+    client.subscribe(MQTTname5[i]);
     }
-    for (var i=0; i < MQTTBattery1.length; i++) {
-    client.subscribe(MQTTBattery1[i]);
+    for (var i=0; i < MQTTname6.length; i++) {
+    client.subscribe(MQTTname6[i]);
     }
-    for (var i=0; i < MQTTCurrent1.length; i++) {
-    client.subscribe(MQTTCurrent1[i]);
+    for (var i=0; i < MQTTname7.length; i++) {
+    client.subscribe(MQTTname7[i]);
     }
-    for (var i=0; i < MQTTTemp1.length; i++) {
-    client.subscribe(MQTTTemp1[i]);
+    for (var i=0; i < MQTTname7.length; i++) {
+    client.subscribe(MQTTname7[i]);
     }
 }
 // called when a message arrives
